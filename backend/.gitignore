@@ -1,0 +1,96 @@
+
+# ==================================
+# Python
+# ==================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Python build files
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+pip-wheel-metadata/
+
+# ==================================
+# Virtual Environment (uv)
+# ==================================
+.venv/
+venv/
+env/
+ENV/
+
+# ==================================
+# uv
+# ==================================
+# Keep uv.lock committed for reproducible dependencies.
+# Do not ignore uv.lock.
+
+# ==================================
+# Django
+# ==================================
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Media files (uploaded by users)
+media/
+
+# Static files collected by collectstatic
+staticfiles/
+
+# ==================================
+# Environment Variables / Secrets
+# ==================================
+.env
+.env.*
+!.env.example
+
+# ==================================
+# IDE and Editors
+# ==================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ==================================
+# Operating System
+# ==================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==================================
+# Testing and Coverage
+# ==================================
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+
+# ==================================
+# Type Checking / Linting
+# ==================================
+.mypy_cache/
+.pyright/
+.ruff_cache/
+
+# ==================================
+# Jupyter Notebook
+# ==================================
+.ipynb_checkpoints/
+
+# ==================================
+# Temporary Files
+# ==================================
+*.tmp
+*.bak
+*.orig
