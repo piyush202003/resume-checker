@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { Navbar } from "../components/landing/Navbar"
 import { HeroSection } from "../components/landing/HeroSelection"
+import { FeaturesSection } from "../components/landing/FeaturesSection"
 
 export function Landing(){
 
@@ -18,6 +19,7 @@ export function Landing(){
                 <Navbar />
                 <main style={{ background: 'white' }}>
                     <HeroSection />
+                    <FeaturesSection />
                 </main>
             </div>
         </>

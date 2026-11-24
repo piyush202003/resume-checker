@@ -8,7 +8,7 @@ export function HeroSection(){
     return (
         <section className="relative w-full">
             <DarkPanel 
-                className="w-full min-h-[760px] lg:min-h-[820px]"
+                className="w-full min-h-[760px] md:min-h-[820px]"
                 radius='rounded-b-[40px] sm:rounded-b-[56px]'
             >
                 <div 
@@ -23,8 +23,8 @@ export function HeroSection(){
                             transition = {{ duration: 0.6, delay: 0.1 }}
                             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/10 backdrop-blur-md"
                         >
-                            <Sparkles size={12} className="text-[#B6CFC0]" />
-                            <span className="text-lg tracking-wide text-white/85 uppercase font-semibold">
+                            <Sparkles className="text-[#B6CFC0] size-6" />
+                            <span className="text-base md:text-lg tracking-wide text-white/85 uppercase font-semibold">
                                 Now scoring against ATS 2026 criteria
                             </span>
                         </motion.div>
@@ -32,7 +32,7 @@ export function HeroSection(){
                             initial={{ opacity: 0, y: 14}}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.1 }}
-                            className="font-display text-5xl sm:text-6xl lg:text-7xl leading-16 tracking-tight mt-7"
+                            className="font-display text-4xl sm:text-6xl lg:text-7xl leading-8 sm:leading-12 lg:leading-16 tracking-tight mt-7"
                         >
                             Beat the ATS.
                             <br />
@@ -108,7 +108,7 @@ export function HeroSection(){
                     </div>
 
                     {/* Visual */}
-                    <div className="relative">
+                    <div className="relative hidden md:inline">
                         <HeroDashboardPreview />
                     </div>
                 </div>
