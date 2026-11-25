@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { Navbar } from "../components/landing/Navbar"
 import { HeroSection } from "../components/landing/HeroSelection"
 import { FeaturesSection } from "../components/landing/FeaturesSection"
+import { HowItWorks } from "../components/landing/HowItWorks"
 
 export function Landing(){
 
@@ -15,11 +16,12 @@ export function Landing(){
 
     return (
         <>
-            <div className="min-h-screen bg-[var(--bg)] text-[var(--ink)]">
+            <div className="min-h-screen bg-(--bg) text-(--ink)">
                 <Navbar />
                 <main style={{ background: 'white' }}>
                     <HeroSection />
                     <FeaturesSection />
+                    <HowItWorks />
                 </main>
             </div>
         </>
