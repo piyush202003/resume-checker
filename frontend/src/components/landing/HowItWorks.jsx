@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Check, Cpu, FileDown, Upload } from 'lucide-react';
+import { ArrowRight, Check, Cpu, FileDown, Sparkles, Upload } from 'lucide-react';
 import { SectionHeader } from './FeaturesSection';
 
 function UploadVisual(){
@@ -76,12 +76,77 @@ function AnalyzeVisual(){
                         transition={{ duration: 0.4, delay: 0.2+i*0.1}}
                         className='flex items-center gap-2'
                     >
-                        <div>
+                        <div
+                            className={`h-4 w-4 rounded-full flex items-center justify-center ${
+                                item.done
+                                ? "bg-(--accent-soft) text-(--accent-strong)"
+                                : 'border border-(--accent)/40'
+                            }`}
+                        >
                             {item.done && <Check size={9} strokeWidth={3.5} />}
                         </div>
+
+                        <div className='text-xs text-(--ink-muted)'>{item.label}</div>
                     </motion.div>
                 ))}
             </div>
+
+            <div className='mt-3 pt-3 border-t border-(--border) flex items-center justify-between'>
+                <div className='text-xs text-(--ink-muted)'>
+                    Predicted score
+                </div>
+                <div className='inline-flex items-center gap-1 text-xs font-bold text-(--accent-strong) tabular-nums'>
+                    <Sparkles size={10} strokeWidth={2.5} />
+                    82 / 100
+                </div>
+            </div>
+        </div>
+    )
+}
+
+function DownloadVisual(){
+    return (
+        <div className='relative rounded-2xl bg-linear-to-br from-(--surface-2)/60 to-(--surface) border border-(--border) p-4'>
+            <div className='flex items-center gap-3'>
+                <div className='relative shrink-0'>
+                    <div className='h-12 w-9 rounded-md bg-(--surface) border border-(--border) shadow-card flex flex-col gap-0.5 p-1.5 '>
+                        <div className='h-0.5 w-3/4 rounded bg-(--ink-muted)/40'></div>
+                        <div className='h-0.5 w-full rounded bg-(--ink-muted)/25'></div>
+                        <div className='h-0.5 w-5/6 rounded bg-(--ink-muted)/25'></div>
+                        <div className='h-0.5 w-2/3 rounded bg-(--ink-muted)/25'></div>
+                        <div className='mt-auto h-1 w-full rounded-xs bg-(--accent-soft)'></div>
+                    </div>
+                    <div
+                        className='absolute -bottom-1.5 -right-1.5 h-5 px-1.5 rounded-md text-white text-xs font-bold flex items-center'
+                        style={{
+                            background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%)",
+                        }}
+                    >PDF</div>
+                </div>
+
+                <div className="flex-1 min-w-0 text-left">
+                    <div className='text-xs font-semibold text-(--ink) truncate'>
+                        resume_v3_optimized.pdf
+                    </div>
+                    <div className='text-xs text-(--ink-muted) mt-0.5'>
+                        ATS-ready · 1 page
+                    </div>
+                </div>
+
+                <button className='h-9 w-9 rounded-full bg-(--ink) text-(--bg) flex items-center justify-center shrink-0 transition-transform hover:-translate-y-0.5'>
+                    <FileDown size={13} />
+                </button>
+            </div>
+
+            <div className='mt-3 pt-3 border-t border-(--border) flex items-center justify-between'>
+                <div className='text-xs inline-flex items-center gap-1 h-5 px-2 rounded-full bg-(--accent-soft) text-(--success) font-semibold tabular-nums'>
+                    ATS 86
+                </div>
+                <div className='text-xs text-(--ink-muted) tabular-nums'>
+                    <span className='text-(--success) font-semibold'>+24 pts</span> from V1
+                </div>
+            </div>
+
         </div>
     )
 }
@@ -101,13 +166,13 @@ const STEPS = [
         desc: "Gemini scores against ATS rubrics, surfaces 5 issues + 5 strengths, and drafts rewrites.",
         Visual: AnalyzeVisual,
     },
-    // {
-    //     n: "03",
-    //     icon: FileDown,
-    //     title: "Download optimized PDF",
-    //     desc: "Apply rewrites, save a new version, and export a clean ATS-friendly PDF.",
-    //     Visual: DownloadVisual,
-    // },
+    {
+        n: "03",
+        icon: FileDown,
+        title: "Download optimized PDF",
+        desc: "Apply rewrites, save a new version, and export a clean ATS-friendly PDF.",
+        Visual: DownloadVisual,
+    },
 ];
 
 export function HowItWorks(){
