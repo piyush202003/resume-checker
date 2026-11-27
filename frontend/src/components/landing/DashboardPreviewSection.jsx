@@ -1,4 +1,4 @@
-import { AlertCircle, Gauge, GitCompare, KeyRound, Sparkles, TrendingUp } from "lucide-react"
+import { AlertCircle, ArrowRight, CheckCheck, Gauge, GitCompare, KeyRound, Sparkles, TrendingUp } from "lucide-react"
 import { DarkPanel } from "./DarkPanel"
 import { SectionHeader } from "./FeaturesSection"
 import { motion } from 'framer-motion' 
@@ -221,6 +221,63 @@ export function DashboardPreviewSection() {
 
                             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[rgba(143,179,156,0.14)] text-[#B6CFC0] text-xs font-semibold">
                                 <Sparkles size={10} /> AI rewrite
+                            </div>
+                        </div>
+
+                        <div className="grid gird-cols-1 md:grid-cols-[1fr_24px_1fr] gap-3 items-center">
+                            <div className="rounded-xl bg-white/3 border border-white/8 p-3">
+                                <div className="text-xs uppercase tracking-wide text-white/45 font-semibold mb-1">
+                                    Original
+                                </div>
+                                <div className="text-base text-white/70 leading-snug">
+                                    Built dashboards for the analytics team
+                                </div>
+                            </div>
+
+                            <div className="flex justify-center text-white/45">
+                                <ArrowRight size={16} />
+                            </div>
+
+                            <div className="rounded-xl bg-white/3 border border-white/8 p-3">
+                                <div className="text-xs uppercase tracking-wide text-[#B6CFC0] font-semibold mb-1">
+                                    Rewritten
+                                </div>
+                                <div className="text-base text-white leading-snug">
+                                    Shipped 4 React dashboard adopted by 12k users -- cut load time 38%.
+                                </div>
+                            </div>
+                        </div>
+                    </DarkCard>
+
+                    {/* Issues + strengths */}
+                    <DarkCard className="lg:col-span-5" >
+                        <div className="grid grid-cols-2 gap-4">
+                            <div>
+                                <div className="flex items-center gap-1.5 text-red-400/60 mb-2 ">
+                                    <AlertCircle size={16} />
+                                    <span className="text-base uppercase tracking-wide font-semibold ">Issues</span>
+                                </div>
+
+                                {['Weak verbs', 'Missing keywords', 'Inconsistent dates'].map((s)=>(
+                                    <div
+                                        key={s}
+                                        className="text-base text-white/64 py-1 border-b-2 border-white/45 last:border-0"
+                                    >{s}</div>
+                                ))}
+                            </div>
+
+                            <div>
+                                <div className="flex items-center gap-1.5 text-green-400/45 mb-2">
+                                    <CheckCheck size={16} />
+                                    <span className="text-base uppercase tracking-wide font-semibold">Strengths</span>
+                                </div>
+
+                                {['Quantified outcomes', 'Clean structure', 'Strong action verbs'].map((s)=>(
+                                    <div
+                                        key={s}
+                                        className="text-base text-white/65 py-1 border-b border-white/45 last:border-0"
+                                    >{s}</div>
+                                ))}
                             </div>
                         </div>
                     </DarkCard>
