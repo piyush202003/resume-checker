@@ -49,7 +49,7 @@ function ScoreBarsPreview(){
 
         <div className="space-y-2 5">
             {bars.map((b, i)=>(
-                <div key={b.lable}>
+                <div key={b.label}>
                     <div className="flex justify-between text-xs text-(--ink-muted) mb-1">
                         <span>{b.label}</span>
                         <span className="tabluar text-(--ink) font-semibold">{b.value}</span>

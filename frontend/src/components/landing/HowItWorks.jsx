@@ -280,7 +280,7 @@ export function HowItWorks(){
                                 >{s.desc}</p>
 
                                 {/* Visual mockup */}
-                                <dic className="relative mt-7"><Visual /></dic>
+                                <div className="relative mt-7"><Visual /></div>
                             </div>
 
                             {/* Arrow between card on desktop */}
